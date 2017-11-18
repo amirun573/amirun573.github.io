@@ -1,0 +1,150 @@
+<html>
+	<head>
+		<Title>Customer Detail</Title>
+	</head>
+	<style>
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=number], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+div {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+h1 { color: #111; font-family: 'Helvetica Neue', sans-serif; font-size: 30px; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center; }
+
+	textarea{
+	width: 500px;	
+	border: none;
+	border-radius: 20px;
+	outline: none;
+	padding: 10px;
+	font-family: 'Sniglet', cursive;
+	font-size: 1em;
+	color: #676767;
+	transition: border 0.5s;
+	-webkit-transition: border 0.5s;
+	-moz-transition: border 0.5s;
+	-o-transition: border 0.5s;
+	border: solid 3px #98d4f3;	
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	box-sizing:border-box;
+	
+}
+
+</style>
+	<body>
+	
+	<h1>Please Fill The Form</h1>
+	<div>
+		<form id="register">
+			<input type="text" id="email" name="email" placeholder="Email"><br/><br/>
+			<input type="text" id="name" name="name" placeholder="Full Name"><br/><br/>
+			
+			
+			Male
+			<input type="radio" id="gender" name="gender">
+			Female
+			<input type="radio" id="gender" name="gender">
+			<br/><br/>
+			
+			
+			<p>Address:</p>
+			<textarea name="address" rows="4" cols="50" placeholder="Address">
+
+			</textarea><br/><br/>
+			<input type="number" id="zipcode" name="zipcode" placeholder="Zip Code"><br/><br/>
+			
+			<select id="state" name="state" size="1">
+				<option value="Johor">Johor</option>
+				<option value="Kedah">Kedah</option>
+				<option value="Kelantan">Kelantan</option>
+				<option value="Kuala Lumpur">Kuala Lumpur</option>
+				<option value="Melaka">Melaka</option>
+				<option value="Negeri Sembilan">Negeri Sembilan</option>
+				<option value="Pahang">Pahang</option>
+				<option value="Perak">Perak</option>
+				<option value="Perlis">Perlis</option>
+				<option value="Pulau Pinang">Pulau Pinang</option>
+				<option value="Sabah">Sabah</option>
+				<option value="Sarawak">Sarawak</option>
+				<option value="Selangor">Selangor</option>
+				<option value="Terengganu">Terengganu</option>
+				<option value="Wilayah Persekutuan – Labuan">Wilayah Persekutuan - Labuan</option>
+			</select><br/><br/>
+			
+			<input type="number" id="phone" name="phone" placeholder="Phone"><br/><br/>
+			
+			<button type="reset" id="reset" name="reset">Reset</button>
+			<button type="submit" id="submit" name="submit" onClick="validateForm()">Submit</button>
+			
+			
+		</form>
+	</div>
+	
+	<script>
+		function validateForm(){
+		  var fields = ["email","name","gender","address","zipcode","phone"]
+			var em=document.getElementById('email').value;
+			var valid=em.indexOf("@");
+			valid=parseInt(valid);
+		  var i, l = fields.length;
+		  var fieldname;
+		  for (i = 0; i < l; i++) {
+			fieldname = fields[i];
+			if (document.forms["register"][fieldname].value === "") {
+			
+				if(fieldname=="email"){
+					if(valid==-1){
+						alert("Please write Your email with '@' ");
+						return false;
+					}
+				}
+			  alert(fieldname + " can not be empty" + em);
+			 
+			  return false;
+			}
+			
+		  }
+		  
+		  alert("Sucessfully Submit");
+		  return true;
+		}
+	</script>
+	
+	</body>
+</html>

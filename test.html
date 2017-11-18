@@ -1,0 +1,64 @@
+<html>
+	<head>
+		<Title>C</Title>
+	</head>
+	
+	<body>
+	
+	<form>
+		<input type="radio" name="first" id="first"><input type="number" id="quantity1" name="quantity1"><br/>
+		<input type="radio" name="second" id="second"><input type="number" id="quantity2" name="quantity2"><br/>
+		<input type="radio" name="third" id="third"><input type="number" id="quantity3" name="quantity3"><br/>
+	</form>
+	<button type="submit" id="submit" name="submit" onClick="calprice()">Submit</button>
+		<script>
+			
+			function calprice(){
+			
+			//read quantity
+			var a,b,c;
+			//total price a product
+			var ah,ae,oh;
+			var total;
+			
+			a=parseFloat(a);
+			b=parseFloat(b);
+			c=parseFloat(c);
+			
+			ah=parseFloat(ah);
+			ae=parseFloat(ae);
+			oh=parseFloat(oh);
+			
+			total=parseFloat(total);
+			total=0;
+			
+			ah=0;
+			ae=0;
+			oh=0;
+			
+			
+			
+			
+			if(document.getElementById("first").checked) {
+				a=document.getElementById("quantity1").value;
+				ah=10 * a;
+			}
+			
+			if(document.getElementById("second").checked) {
+				b=document.getElementById("quantity2").value;
+				ae=50 * b;
+			}
+			
+			if(document.getElementById("third").checked) {
+				c=document.getElementById("quantity3").value;
+				oh=30 * c;
+			}
+			
+			total=ah+ae+oh;
+			
+			alert(total);
+			}
+
+		</script>
+	</body>
+<html>
